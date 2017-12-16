@@ -20,11 +20,11 @@
 					<td><span title="{{ pending_channel.channel.remote_node_pub }}">{{ pending_channel.channel.remote_node_pub | firstlast:6 }}</span> <button type="button" class="btn btn-default btn-xs" aria-label="Copy to clipboard" ngclipboard data-clipboard-text="{{ pending_channel.channel.remote_node_pub }}" ngclipboard-success="pubkeyCopied(pending_channel.channel);" uib-tooltip="Copied!" tooltip-placement="bottom" tooltip-trigger="'none'" tooltip-is-open="pending_channel.channel.pubkeyCopied"><span class="glyphicon glyphicon-copy" aria-hidden="true"></span></button></td>
 					<td><span title="{{ pending_channel.channel.channel_point }}"><a ng-click="openChannelPointInExplorer(pending_channel.channel)" title="Open transaction {{ pending_channel.channel.channel_point }} in explorer">{{ pending_channel.channel.channel_point | firstlast:6:8 }}</a></span> <button type="button" class="btn btn-default btn-xs" aria-label="Copy to clipboard" ngclipboard data-clipboard-text="{{ pending_channel.channel.channel_point }}" ngclipboard-success="chanpointCopied(pending_channel.channel);" uib-tooltip="Copied!" tooltip-placement="bottom" tooltip-trigger="'none'" tooltip-is-open="pending_channel.channel.chanpointCopied"><span class="glyphicon glyphicon-copy" aria-hidden="true"></span></button>
 						<button type="button" class="btn btn-default btn-xs" aria-label="Open in block explorer" ng-click="openChannelPointInExplorer(pending_channel.channel)"><span class="glyphicon glyphicon-share" aria-hidden="true"></span></button></td>
-					<td>{{ pending_channel.channel.capacity }}</td>
-					<td>{{ pending_channel.channel.local_balance }}</td>
-					<td>{{ pending_channel.channel.remote_balance }}</td>
-					<td>{{ pending_channel.confirmation_height }}</td>
-					<td>{{ pending_channel.blocks_till_open }}</td>
+					<td class="text-right">{{ pending_channel.channel.capacity | number }}</td>
+					<td class="text-right">{{ pending_channel.channel.local_balance | number }}</td>
+					<td class="text-right">{{ pending_channel.channel.remote_balance | number }}</td>
+					<td class="text-right">{{ pending_channel.confirmation_height | number }}</td>
+					<td class="text-right">{{ pending_channel.blocks_till_open | number }}</td>
 				</tr>
 			</tbody>
 		</table>
